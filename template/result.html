@@ -9,8 +9,13 @@
 <body>
     <h1>Result</h1>
     
-    <!-- <p>Processed audio file: {{ audio_file_path }}</p> -->
-    <p>Gender: {{ gender }}</p>
+    {% if gender == "Male" %}
+        <p style="color: blue;">Gender: Male</p>
+    {% else %}
+        <p style="color: rgb(247, 83, 111);">Gender: Female</p>
+    {% endif %}
+
+    <!-- <p>Gender: {{ gender }}</p> -->
     <p>Emotion: {{ result }}</p>
 
     <!-- Add additional content or styling as needed -->
