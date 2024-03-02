@@ -5,6 +5,12 @@ name = "pypi"
 
 [packages]
 django = "*"
+pyaudio = "*"
+scikit-learn = "*"
+keras = "*"
+tensorflow = "*"
+pandas = "*"
+librosa = "*"
 
 [dev-packages]
 
