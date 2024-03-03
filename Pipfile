@@ -11,6 +11,7 @@ keras = "*"
 tensorflow = "*"
 pandas = "*"
 librosa = "*"
+gunicorn = "*"
 
 [dev-packages]
 
