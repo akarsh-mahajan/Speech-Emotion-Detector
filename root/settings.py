@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-gyb&=dd@ug=bb$)w&hu0e#z3+7v8y_sflefoeo-e1^(ccp*cb+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['render.com', 'speech-emotion-recognizer-fzma.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
