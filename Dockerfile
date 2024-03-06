@@ -1,5 +1,5 @@
 # Use the official Python image with version 3.9 as the base
-FROM python:3.9
+FROM python:3.11-alpine 
 
 # Create a working directory and copy the project directory into it
 WORKDIR /app
@@ -7,16 +7,21 @@ WORKDIR /app
 # Copy the requirements.txt file into the container
 COPY requirements.txt .
 
-# Install Python dependencies
-RUN pip install -r requirements.txt
-RUN pip install Django
+
 # RUN apt-get install libasound-dev libportaudio2 libportaudiocpp0 portaudio19-dev -y
-RUN pkg install wget
-RUN $PREFIX/bin/wget https://its-pointless.github.io/setup-pointless-repo.sh
+RUN apk add wget
+RUN /usr/bin/wget https://placeholder.com/setup-pointless-repo.sh
+
+# Execute the script (avoid executing scripts from external sources without verifying their content)
 RUN bash setup-pointless-repo.sh
-RUN pkg install portaudio portaudio-dev
+
+# Install PyAudio and its development headers
+RUN apk add portaudio portaudio-dev
 RUN pip install pyaudio
 RUN pip install tensorflow 
+
+RUN pip install -r requirements.txt
+RUN pip install Django
 
 # Copy the rest of the project files into the working directory
 COPY . .
