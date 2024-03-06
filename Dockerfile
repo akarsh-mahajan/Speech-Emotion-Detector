@@ -1,5 +1,5 @@
 # Use the official Python image with version 3.9 as the base
-FROM python:3.10.1
+FROM python:3.9
 
 # Create a working directory and copy the project directory into it
 WORKDIR /app
