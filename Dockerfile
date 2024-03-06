@@ -1,9 +1,7 @@
 FROM python:3.10.1
 
-WORKDIR /code
+WORKDIR /app
 COPY . code
-
-EXPOSE 8000
 
 RUN pip install -r requirements.txt
 RUN apt-get install libasound-dev libportaudio2 libportaudiocpp0 portaudio19-dev -y

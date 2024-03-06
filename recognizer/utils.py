@@ -155,6 +155,5 @@ def recording(request):
         wf.setframerate(RATE)
         wf.writeframes(b''.join(frames))
         wf.close()
-        print("hi")
     
     return
