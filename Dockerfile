@@ -11,6 +11,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 RUN pip install Django
 # RUN apt-get install libasound-dev libportaudio2 libportaudiocpp0 portaudio19-dev -y
+RUN apk add portaudio-dev
 RUN pip install pyaudio
 RUN pip install tensorflow 
 
