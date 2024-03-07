@@ -5,6 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Record Audio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
     <h1>Record Audio</h1>
@@ -21,60 +56,11 @@
         <input type="submit" value="Start Recording">
     </form>
 
-    <!-- <button id="startRecording">Start Recording</button> -->
-    <!-- <button id="analyzeAudio">Analyze Audio</button> -->
     <h1>Analysis Result</h1>
 
     <form action="{% url 'analyze_audio' %}" method="post">
         {% csrf_token %}
         <input type="submit" value="Analyze">
     </form>
-
-    <!-- <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const statusDiv = document.getElementById('status');
-            const startRecordingBtn = document.getElementById('startRecording');
-
-            startRecordingBtn.addEventListener('click', async function() {
-                try {
-                    const response = await fetch('{% url "record_audio" %}', {
-                        method: 'POST',
-                    });
-
-                    // const data = await response.json();
-
-                    // if (data.status === 'success') {
-                    //     statusDiv.innerHTML = `<p style="color: green;">Recording successful. Audio file saved</p>`;
-                    // } else {
-                    //     statusDiv.innerHTML = `<p style="color: red;">Error: ${data.message}</p>`;
-                    // }
-                } catch (error) {
-                    console.error('Error recording audio:', error);
-                    statusDiv.innerHTML = `<p style="color: red;">Error recording audio. Please try again.</p>`;
-                }
-            });
-
-            // analyzeAudioBtn.addEventListener('click', async function() {
-            //     try {
-            //         // Make a request to the analyze function (update the URL accordingly)
-            //         const analyzeResponse = await fetch('{% url "analyze_audio" %}', {
-            //             method: 'POST',
-            //         });
-
-            //         const analyzeData = await analyzeResponse.json();
-            //         <p>Operation Result: {{ result }}</p>
-            //         // Handle the response from the analyze function as needed
-            //         // if (analyzeData.status === 'success') {
-            //         //     statusDiv.innerHTML = `<p style="color: green;">Audio analysis successful. Result: ${analyzeData.result}</p>`;
-            //         // } else {
-            //         //     statusDiv.innerHTML = `<p style="color: red;">Error: ${analyzeData.message}</p>`;
-            //         // }
-            //     } catch (error) {
-            //         console.error('Error analyzing audio:', error);
-            //         statusDiv.innerHTML = `<p style="color: red;">Error analyzing audio. Please try again.</p>`;
-            //     }
-            // });
-        });
-    </script> -->
 </body>
 </html>
